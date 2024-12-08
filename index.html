@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Romántica</title>
+    <style>
+        /* Estilo general del cuerpo */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #ffe6e6, #ffccff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-y: auto;
+            color: #5a1a5e;
+        }
+
+        /* Estilo del encabezado */
+        h1 {
+            color: #ff3366;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Botones principales */
+        .romantic-button,
+        .hyperlink-button {
+            background: linear-gradient(to bottom right, #ff6699, #ff3366);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Efecto hover en los botones */
+        .romantic-button:hover,
+        .hyperlink-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(255, 51, 102, 0.5);
+        }
+
+        /* Botón extra (inicialmente oculto) */
+        .hyperlink-button {
+            visibility: hidden;
+        }
+
+        /* Mensajes románticos */
+        .romantic-message, 
+        .extra-message {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 1.2rem;
+            color: #5a1a5e;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            margin-top: 20px;
+            visibility: hidden;
+            line-height: 1.6;
+        }
+
+        .extra-message strong {
+            font-size: 1.1rem;
+            color: #ff3366;
+        }
+
+        /* Animación de transición para los mensajes */
+        .romantic-message.visible, 
+        .extra-message.visible {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        /* Ocultos inicialmente */
+        .romantic-message, 
+        .extra-message {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 Bienvenida, linda 💖</h1>
+    <button class="romantic-button" id="botonPrincipal" onclick="mostrarMensaje()">Presiona aquí mi flaquita linda</button>
+    <div class="romantic-message" id="mensajeRomantico">
+        ¡Eres mi persona favorita! 💕 Gracias por hacerme sonreír. 🌹
+        <p id="textoExtra"></p>
+    </div>
+    <button class="hyperlink-button" id="botonExtra" onclick="mostrarExtra()">presionaa 🤭</button>
+    <div class="extra-message" id="mensajeExtra">
+            <br><br>
+            <strong>Y a continuación un pequeño poema que hice para ti jsjsjs.
+
+            En el jardín de mi corazón, donde las flores de amor crecen, hay un lugar especial reservado, para alguien que me hace sentir vivo.
+            
+            Esa persona eres tú, con tu sonrisa, que ilumina mi día y mi noche, con tu risa, que es música para mis oídos, y con tu amor, que es el oxígeno que necesito.
+
+            Y, por supuesto, que no puedo dejar de mencionar, tu altura, que es perfecta para mi.
+            Veintitrés centímetros menos que yo jajaja, pero para mí, eres la más alta del mundo.
+
+            Quiero saber si podrías ser, la dueña de mi corazón, mi compañera, mi amiga, mi confidente, mi todo.
+            Quiero saber si podrías ser la persona, con la que compartir mis sueños, mis miedos, mis alegrías y mis tristezas.
+
+            Lo siento mucho por no poder hacer esto en persona, pero ya llevaba tiempo preparando esto para ti.
+            Quería encontrar la manera perfecta de expresar mis sentimientos, y espero que estas palabras te muestren lo que siento.
+
+            Si es así, te pido permiso, para que puedas ser la reina de mi corazón, para que puedas ser la persona que me haga sentir, que soy el hombre más afortunado del mundo.
+
+            ¿Te gustaria ser mi novia, mi amor, mi todo?</strong>
+        </p>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            const mensajeRomantico = document.getElementById("mensajeRomantico");
+            const botonExtra = document.getElementById("botonExtra");
+            
+            mensajeRomantico.classList.add("visible");
+            document.getElementById("textoExtra").innerText = `
+                Bueno hice esto para decirte como tipo lo que siento porque en verdad te hiciste muy especial para mi en tan poco tiempo y eso me sorprende en verdad porque no suele pasar muy seguido o sea de alguna manera te hiciste tan especial para mi que todo lo que hagas me va a importar, desde escuchar tu día hasta saber lo que te molesta y gusta, estoy interesado en ti y nunca serás una molestia, al contrario, no sé qué hice para merecerte, eres lo mejor. La otra vez miré a la luna y las estrellas pero sinceramente no creo que ninguna de ellas brille tanto como tu, o sea tan linda como tu. Yo siempre he soñado con un dia viajar más allá de las estrellas y explorar el universo aunque ya no lo necesito porque en tus ojos puedo ver todo ese universo que anhelo tanto, aprecio profundamente que seas parte de mi vida. Tu compañía me llena de felicidad, y espero que sigamos evolucionando juntos, aprendiendo y creciendo juntos. Gracias a ti entiendo lo que Ray Meza en unos de sus poemas dijo "Puedes estar lejos de mis ojos, lejos de mis labios, lejos de mi cuerpo pero no de mi corazón ni de mi alma", ya que aunque estemos lejos seguiré queriéndote como siempre o incluso más. Pero ya basta de esto siento que te aburriré con tanto texto jajaja, mejor da click en el botón de abajo 😇👇
+
+            `;
+            botonExtra.style.visibility = "visible";
+        }
+
+        function mostrarExtra() {
+            const mensajeExtra = document.getElementById("mensajeExtra");
+            mensajeExtra.classList.add("visible");
+        }
+    </script>
+</body>
+</html>
